@@ -3430,6 +3430,8 @@ body {
     .entry-content p > a:hover,
     .entry-content li > a:hover {
       border-bottom-style: solid; }
+  .entry-content .entry-read-more {
+    float: right; }
 
 .entry-header {
   width: 100%;
