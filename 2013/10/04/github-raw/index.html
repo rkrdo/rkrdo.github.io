@@ -5,30 +5,30 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Page Not Found &#8211; Ricardo's Blog</title>
-<meta name="description" content="Page not found. Your pixels are in another canvas.">
-
+<title>Github Raw &#8211; Ricardo's Blog</title>
+<meta name="description" content="Testing">
+<meta name="keywords" content="">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="/images/">
-<meta name="twitter:title" content="Page Not Found">
-<meta name="twitter:description" content="Page not found. Your pixels are in another canvas.">
+<meta name="twitter:title" content="Github Raw">
+<meta name="twitter:description" content="Testing">
 <meta name="twitter:creator" content="@rkrdox">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Page Not Found">
-<meta property="og:description" content="Page not found. Your pixels are in another canvas.">
-<meta property="og:url" content="/404.html">
+<meta property="og:title" content="Github Raw">
+<meta property="og:description" content="Testing">
+<meta property="og:url" content="/2013/10/04/github-raw/">
 <meta property="og:site_name" content="Ricardo's Blog">
 
 
 
 
 
-<link rel="canonical" href="/404.html">
+<link rel="canonical" href="/2013/10/04/github-raw/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Ricardo's Blog Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -64,7 +64,7 @@
 
 </head>
 
-<body id="page" >
+<body id="post" >
 
 <!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
 <nav id="dl-menu" class="dl-menuwrapper" role="navigation">
@@ -118,7 +118,10 @@
   <article class="hentry">
     <header class="header-title">
       <div class="header-title-wrap">
-        <h1 class="entry-title">Page Not Found</h1>
+        
+          <h1 class="entry-title"><a href="/2013/10/04/github-raw/" rel="bookmark" title="Github Raw">Github Raw</a></h1>
+        
+        <h2><span class="entry-date date published"><time datetime="2013-10-04T16:05:00-04:00">October 04, 2013</time></span></h2>
         
         <p class="entry-reading-time">
           <i class="fa fa-clock-o"></i>
@@ -129,23 +132,49 @@
       </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
-      <p>Sorry, but the page you were trying to view does not exist — perhaps you can try searching for it below.</p>
+      <p>So a while ago I was playing on <a href="http://jsfiddle.net">JSFiddle</a> and I wanted to use some jQuery plug-ins directly from Github (via <code>raw.github.com/...</code>)
+but I would get a <code>Refused to execute script from...</code> error whenever I tried to run the file.</p>
 
-<script type="text/javascript">
-  var GOOG_FIXURL_LANG = 'en';
-  var GOOG_FIXURL_SITE = ''
-</script>
+<p>It seems that the files on raw.github are sent with a <code>text/plain</code> header, making it imposible for sites like JSFiddle and <a href="http://codepen.io">Codepen.io</a> to execute them.</p>
 
-<script type="text/javascript" src="//linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js">
-</script>
+<p>A solution I found was to basically use a CDN to load the plugin on JSFiddle (for example <a href="http://cdnjs.com/">CDNJS</a>), but the downs of using it is that it doesn’t
+have every library  or maybe it has the library, but you need a newer version.</p>
 
+<p>A even better solution I found is mentioned on <a href="http://rawgithub.com">rawgithub</a>, that basically consists on deleting the dot on <code>raw.github.com</code> so it reads like <code>rawgithub.com</code>. Please use this only for <em>demo</em> purposes, and not for production, since the site states that it’s slow.</p>
+
+<p><br />
+<br />
+<br />
+Credits go to <a href="https://twitter.com/yaypie">@yaypie</a> for putting up that information.</p>
 
       <footer class="entry-meta">
+        <span class="entry-tags"></span>
         
-        
+        <div class="social-share">
+  <ul class="socialcount socialcount-small inline-list">
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=/2013/10/04/github-raw/" title="Share on Facebook" class="social-share-link"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=/2013/10/04/github-raw/" title="Share on Twitter" class="social-share-link"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?url=/2013/10/04/github-raw/" title="Share on Google Plus" class="social-share-link"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+  </ul>
+</div><!-- /.social-share -->
+
       </footer>
     </div><!-- /.entry-content -->
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    <div class="read-more">
+  
+    <div class="read-more-header">
+      <a href="" class="read-more-btn">Read More</a>
+    </div><!-- /.read-more-header -->
+    <div class="read-more-content">
+      <h3><a href="/2013/12/29/getting-started-with-ember-js/" title="Getting Started with Ember.js">Getting Started with Ember.js</a></h3>
+      <p>In the summer I started to get interested in learning a MVC Client-side framework, I originally wanted to learn [Backbone.js](http://back...&hellip; <a href="/2013/12/29/getting-started-with-ember-js/">Continue reading</a></p>
+    </div><!-- /.read-more-content -->
+  
+  <div class="read-more-list">
     
+  </div><!-- /.read-more-list -->
+</div><!-- /.read-more -->
   </article>
 </div><!-- /#main -->
 
@@ -171,7 +200,29 @@
 
 
 
-          
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'rkrdo-blog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
 
 </body>
 </html>
