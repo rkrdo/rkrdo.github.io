@@ -1,0 +1,363 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>A cleaner vimrc &#8211; Ricardo's Blog</title>
+<meta name="description" content="Testing">
+<meta name="keywords" content="">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://rkrdo.github.io/images/">
+<meta name="twitter:title" content="A cleaner vimrc">
+<meta name="twitter:description" content="Testing">
+<meta name="twitter:creator" content="@rkrdox">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A cleaner vimrc">
+<meta property="og:description" content="Testing">
+<meta property="og:url" content="http://rkrdo.github.io/2015/03/01/a-cleaner-vimrc/">
+<meta property="og:site_name" content="Ricardo's Blog">
+
+
+
+
+
+<link rel="canonical" href="http://rkrdo.github.io/2015/03/01/a-cleaner-vimrc/">
+<link href="http://rkrdo.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Ricardo's Blog Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://rkrdo.github.io/assets/css/main.css">
+<!-- Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://rkrdo.github.io/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://rkrdo.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://rkrdo.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://rkrdo.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://rkrdo.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://rkrdo.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://rkrdo.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+
+
+</head>
+
+<body id="post" >
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<button class="dl-trigger">Open Menu</button>
+	<ul class="dl-menu">
+		<li><a href="http://rkrdo.github.io/">Home</a></li>
+		<li>
+			<a href="#">About</a>
+			<ul class="dl-submenu">
+				<li>
+					<img src="https://media.licdn.com/media/p/3/000/20f/125/09bab6f.jpg" alt="Ricardo Cruz photo" class="author-photo">
+					<h4>Ricardo Cruz</h4>
+					<p>Rails developer, vim/tmux fanboy.</p>
+				</li>
+				<li><a href="http://rkrdo.github.io/about/"><span class="btn btn-inverse">Learn More</span></a></li>
+				<li>
+					<a href="mailto:ricardocruz.a89@gmail.com"><i class="fa fa-fw fa-envelope"></i> Email</a>
+				</li>
+				<li>
+					<a href="http://twitter.com/rkrdox"><i class="fa fa-fw fa-twitter"></i> Twitter</a>
+				</li>
+				
+				
+				<li>
+					<a href="http://linkedin.com/in/ricardocruz89"><i class="fa fa-fw fa-linkedin"></i> LinkedIn</a>
+				</li>
+				<li>
+					<a href="http://github.com/rkrdo"><i class="fa fa-fw fa-github"></i> GitHub</a>
+				</li>
+				
+				
+				
+				
+			</ul><!-- /.dl-submenu -->
+		</li>
+		<li>
+			<a href="#">Posts</a>
+			<ul class="dl-submenu">
+				<li><a href="http://rkrdo.github.io/posts/">All Posts</a></li>
+				<li><a href="http://rkrdo.github.io/tags/">All Tags</a></li>
+			</ul>
+		</li>
+		
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        
+          <h1 class="entry-title"><a href="http://rkrdo.github.io/2015/03/01/a-cleaner-vimrc/" rel="bookmark" title="A cleaner vimrc">A cleaner vimrc</a></h1>
+        
+        <h2><span class="entry-date date published"><time datetime="2015-03-01T01:21:13-05:00">March 01, 2015</time></span></h2>
+        
+        <p class="entry-reading-time">
+          <i class="fa fa-clock-o"></i>
+          
+          Reading time ~8 minutes
+        </p><!-- /.entry-reading-time -->
+        
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <p>The more customized your vim is, the more the <code>vimrc</code> grows, that’s a fact.</p>
+
+<p>And the <em>bigger</em> the vimrc is, <em>harder</em> it is to find some configuration in there, especially if you don’t establish any patterns for the configuration (order of the configuration, using comments, etc). One clear example is an old version of my <a href="https://github.com/rkrdo/vimfiles/blob/ba8bde2f5101e4578ec9b122c1f784d3f9c1ac93/vimrc">vimrc</a>.</p>
+
+<p>To prevent this, <strong>split up</strong> your vimrc into separate files.</p>
+
+<blockquote>
+  <p>How can this be accomplished?</p>
+</blockquote>
+
+<p>Let’s use plugin management as an example:</p>
+
+<p>I use <a href="https://github.com/gmarik/Vundle.vim">Vundle.vim</a>, and according to the <a href="https://github.com/gmarik/Vundle.vim#quick-start">docs</a>, your vimrc must be set up in a specific order (Vundle config must be at the top):</p>
+
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="c">&quot; ~/.vim/vimrc</span>
+<span class="k">set</span> <span class="nb">nocompatible</span>              <span class="c">&quot; be iMproved, required</span>
+<span class="k">filetype</span> off                  <span class="c">&quot; required</span>
+
+<span class="c">&quot; set the runtime path to include Vundle and initialize</span>
+<span class="k">set</span> <span class="nb">rtp</span><span class="p">+=~</span><span class="sr">/.vim/</span>bundle/Vundle.<span class="k">vim</span>
+<span class="k">call</span> vundle#begin<span class="p">()</span>
+<span class="c">&quot; alternatively, pass a path where Vundle should install plugins</span>
+<span class="c">&quot;call vundle#begin(&#39;~/some/path/here&#39;)</span>
+
+<span class="c">&quot; let Vundle manage Vundle, required</span>
+Plugin <span class="s1">&#39;gmarik/Vundle.vim&#39;</span>
+
+<span class="c">&quot; The following are examples of different formats supported.</span>
+<span class="c">&quot; Keep Plugin commands between vundle#begin/end.</span>
+<span class="c">&quot; plugin on GitHub repo</span>
+Plugin <span class="s1">&#39;tpope/vim-fugitive&#39;</span>
+<span class="c">&quot; plugin from http://vim-scripts.org/vim/scripts.html</span>
+Plugin <span class="s1">&#39;L9&#39;</span>
+<span class="c">&quot; Git plugin not hosted on GitHub</span>
+Plugin <span class="s1">&#39;git://git.wincent.com/command-t.git&#39;</span>
+<span class="c">&quot; git repos on your local machine (i.e. when working on your own plugin)</span>
+Plugin <span class="s1">&#39;file:///home/gmarik/path/to/plugin&#39;</span>
+<span class="c">&quot; The sparkup vim script is in a subdirectory of this repo called vim.</span>
+<span class="c">&quot; Pass the path to set the runtimepath properly.</span>
+Plugin <span class="s1">&#39;rstacruz/sparkup&#39;</span><span class="p">,</span> {<span class="s1">&#39;rtp&#39;</span>: <span class="s1">&#39;vim/&#39;</span>}
+<span class="c">&quot; Avoid a name conflict with L9</span>
+Plugin <span class="s1">&#39;user/L9&#39;</span><span class="p">,</span> {<span class="s1">&#39;name&#39;</span>: <span class="s1">&#39;newL9&#39;</span>}
+
+<span class="c">&quot; All of your Plugins must be added before the following line</span>
+<span class="k">call</span> vundle#<span class="k">end</span><span class="p">()</span>            <span class="c">&quot; required</span>
+<span class="k">filetype</span> plugin indent <span class="k">on</span>    <span class="c">&quot; required</span>
+<span class="c">&quot; To ignore plugin indent changes, instead use:</span>
+<span class="c">&quot;filetype plugin on&quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot;&quot; &quot; &quot; &quot; &quot;</span>
+
+<span class="k">let</span> mapleader <span class="p">=</span> <span class="s2">&quot;,&quot;</span>
+<span class="k">set</span> <span class="k">number</span>
+<span class="nb">syntax</span> <span class="k">on</span>
+<span class="k">colorscheme</span> Tubster
+<span class="k">set</span> <span class="nb">autoindent</span>
+<span class="c">&quot;... more vim configuration</span></code></pre></div>
+
+<p>This might be fine if you only use a couple of plugins, but if you use a lot of plugins (like me), then your vimrc will obviously get bigger.</p>
+
+<h2 id="splitting-the-vimrc-into-multiple-files">Splitting the vimrc into multiple files</h2>
+
+<p>In order to be able to split the vimrc, we have to find a way to read/source the splitted files, the <a href="http://vimdoc.sourceforge.net/htmldoc/repeat.html#:runtime">runtime</a> command is what we’re looking for.</p>
+
+<blockquote>
+  <p>How can I use it?</p>
+</blockquote>
+
+<ul>
+  <li>we create a folder called <em>config</em> inside the vim configuration folder (in my case, the folder lives in <code>~/.vim/</code>)</li>
+  <li>inside the config folder, create a file and move all the Vundle configuration there, I named it <code>VundleFile.vim</code></li>
+  <li>replace all the Vundle.vim config in the vimrc with <code>runtime config/VundleFile.vim</code></li>
+</ul>
+
+<p>The contents of <code>config/VundleFile.vim</code> should be:</p>
+
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="c">&quot; set the runtime path to include Vundle and initialize</span>
+<span class="k">set</span> <span class="nb">rtp</span><span class="p">+=~</span><span class="sr">/.vim/</span>bundle/Vundle.<span class="k">vim</span>
+<span class="k">call</span> vundle#begin<span class="p">()</span>
+<span class="c">&quot; alternatively, pass a path where Vundle should install plugins</span>
+<span class="c">&quot;call vundle#begin(&#39;~/some/path/here&#39;)</span>
+
+<span class="c">&quot; let Vundle manage Vundle, required</span>
+Plugin <span class="s1">&#39;gmarik/Vundle.vim&#39;</span>
+
+<span class="c">&quot; The following are examples of different formats supported.</span>
+<span class="c">&quot; Keep Plugin commands between vundle#begin/end.</span>
+<span class="c">&quot; plugin on GitHub repo</span>
+Plugin <span class="s1">&#39;tpope/vim-fugitive&#39;</span>
+<span class="c">&quot; plugin from http://vim-scripts.org/vim/scripts.html</span>
+Plugin <span class="s1">&#39;L9&#39;</span>
+<span class="c">&quot; Git plugin not hosted on GitHub</span>
+Plugin <span class="s1">&#39;git://git.wincent.com/command-t.git&#39;</span>
+<span class="c">&quot; git repos on your local machine (i.e. when working on your own plugin)</span>
+Plugin <span class="s1">&#39;file:///home/gmarik/path/to/plugin&#39;</span>
+<span class="c">&quot; The sparkup vim script is in a subdirectory of this repo called vim.</span>
+<span class="c">&quot; Pass the path to set the runtimepath properly.</span>
+Plugin <span class="s1">&#39;rstacruz/sparkup&#39;</span><span class="p">,</span> {<span class="s1">&#39;rtp&#39;</span>: <span class="s1">&#39;vim/&#39;</span>}
+<span class="c">&quot; Avoid a name conflict with L9</span>
+Plugin <span class="s1">&#39;user/L9&#39;</span><span class="p">,</span> {<span class="s1">&#39;name&#39;</span>: <span class="s1">&#39;newL9&#39;</span>}
+
+<span class="c">&quot; All of your Plugins must be added before the following line</span>
+<span class="k">call</span> vundle#<span class="k">end</span><span class="p">()</span>            <span class="c">&quot; required</span></code></pre></div>
+
+<p>And your <code>vimrc</code> should look like:</p>
+
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="c">&quot; ~/.vim/vimrc</span>
+<span class="k">set</span> <span class="nb">nocompatible</span>              <span class="c">&quot; be iMproved, required</span>
+<span class="k">filetype</span> off                  <span class="c">&quot; required</span>
+
+runtime config/VundleFile.<span class="k">vim</span>
+
+<span class="k">filetype</span> plugin indent <span class="k">on</span>    <span class="c">&quot; required</span>
+<span class="c">&quot; To ignore plugin indent changes, instead use:</span>
+<span class="c">&quot;filetype plugin on&quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot;&quot; &quot; &quot; &quot; &quot;</span>
+
+<span class="k">let</span> mapleader <span class="p">=</span> <span class="s2">&quot;,&quot;</span>
+<span class="k">set</span> <span class="k">number</span>
+<span class="nb">syntax</span> <span class="k">on</span>
+<span class="k">colorscheme</span> Tubster
+<span class="k">set</span> <span class="nb">autoindent</span>
+<span class="c">&quot;... more vim configuration</span></code></pre></div>
+
+<p>So now <code>config/VundleFile.vim</code> contains Vundle-specific config only.</p>
+
+<p>Your vimrc is a lot cleaner thanks to this technique:</p>
+
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="c">&quot; ~/.vim/vimrc</span>
+<span class="k">set</span> <span class="nb">nocompatible</span>              <span class="c">&quot; be iMproved, required</span>
+<span class="k">filetype</span> off                  <span class="c">&quot; required</span>
+
+runtime config/VundleFile.<span class="k">vim</span>
+
+<span class="k">filetype</span> plugin indent <span class="k">on</span>    <span class="c">&quot; required</span>
+<span class="c">&quot; To ignore plugin indent changes, instead use:</span>
+<span class="c">&quot;filetype plugin on&quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot; &quot;&quot; &quot; &quot; &quot; &quot;</span>
+
+runtime config/custom<span class="p">-</span>settings.<span class="k">vim</span>
+
+runtime config/custom<span class="p">-</span>mappings.<span class="k">vim</span>
+
+runtime config/custom<span class="p">-</span>functions.<span class="k">vim</span>
+
+runtime config/misc<span class="p">-</span>plugin<span class="p">-</span>settings.<span class="k">vim</span></code></pre></div>
+
+<p>If you know of a better way to do this, feel free to share it in the comments.</p>
+
+      <footer class="entry-meta">
+        <span class="entry-tags"></span>
+        
+        <div class="social-share">
+  <ul class="socialcount socialcount-small inline-list">
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://rkrdo.github.io/2015/03/01/a-cleaner-vimrc/" title="Share on Facebook" class="social-share-link"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://rkrdo.github.io/2015/03/01/a-cleaner-vimrc/" title="Share on Twitter" class="social-share-link"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?url=http://rkrdo.github.io/2015/03/01/a-cleaner-vimrc/" title="Share on Google Plus" class="social-share-link"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+  </ul>
+</div><!-- /.social-share -->
+
+      </footer>
+    </div><!-- /.entry-content -->
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    <div class="read-more">
+  
+    <div class="read-more-header">
+      <a href="http://rkrdo.github.io/2013/12/29/getting-started-with-ember-js/" class="read-more-btn">Read More</a>
+    </div><!-- /.read-more-header -->
+    <div class="read-more-content">
+      <h3><a href="http://rkrdo.github.io/2013/12/29/getting-started-with-ember-js/" title="Getting Started with Ember.js">Getting Started with Ember.js</a></h3>
+      <p>In the summer I started to get interested in learning a MVC Client-side framework, I originally wanted to learn Backbone.js, but a friend...&hellip; <a href="http://rkrdo.github.io/2013/12/29/getting-started-with-ember-js/">Continue reading</a></p>
+    </div><!-- /.read-more-content -->
+  
+  <div class="read-more-list">
+    
+      <div class="list-item">
+        <h4><a href="http://rkrdo.github.io/2013/10/04/github-raw/" title="Github Raw">Github Raw</a></h4>
+        <span>Published on October 04, 2013</span>
+      </div><!-- /.list-item -->
+    
+  </div><!-- /.read-more-list -->
+</div><!-- /.read-more -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2015 Ricardo Cruz. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/hpstr/" rel="notfollow">HPSTR Theme</a>.</span>
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://rkrdo.github.io/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://rkrdo.github.io/assets/js/scripts.min.js"></script>
+<script>
+  $(".social-share-link").on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this),
+    link = $this.attr('href'),
+    title = $this.attr('title');
+    window.open(link, title, 'width=500,height=600');
+  });
+</script>
+
+
+
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'rkrdo-blog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+</body>
+</html>

@@ -2,26 +2,188 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Ricardo's Blog</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="/feed.xml" />
-<link rel="alternate" type="text/html" href="" />
-<updated>2015-02-28T19:50:24-05:00</updated>
-<id>/</id>
+<link rel="self" type="application/atom+xml" href="http://rkrdo.github.io/feed.xml" />
+<link rel="alternate" type="text/html" href="http://rkrdo.github.io" />
+<updated>2015-03-01T01:23:42-05:00</updated>
+<id>http://rkrdo.github.io/</id>
 <author>
   <name>Ricardo Cruz</name>
-  <uri>/</uri>
+  <uri>http://rkrdo.github.io/</uri>
   <email>ricardocruz.a89@gmail.com</email>
 </author>
 
 
 <entry>
+  <title type="html"><![CDATA[A cleaner vimrc]]></title>
+ <link rel="alternate" type="text/html" href="http://rkrdo.github.io/2015/03/01/a-cleaner-vimrc/" />
+  <id>http://rkrdo.github.io/2015/03/01/a-cleaner-vimrc</id>
+  <published>2015-03-01T01:21:13-05:00</published>
+  <updated>2015-03-01T01:21:13-05:00</updated>
+  <author>
+    <name>Ricardo Cruz</name>
+    <uri>http://rkrdo.github.io</uri>
+    <email>ricardocruz.a89@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;The more customized your vim is, the more the &lt;code&gt;vimrc&lt;/code&gt; grows, that’s a fact.&lt;/p&gt;
+
+&lt;p&gt;And the &lt;em&gt;bigger&lt;/em&gt; the vimrc is, &lt;em&gt;harder&lt;/em&gt; it is to find some configuration in there, especially if you don’t establish any patterns for the configuration (order of the configuration, using comments, etc). One clear example is an old version of my &lt;a href=&quot;https://github.com/rkrdo/vimfiles/blob/ba8bde2f5101e4578ec9b122c1f784d3f9c1ac93/vimrc&quot;&gt;vimrc&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To prevent this, &lt;strong&gt;split up&lt;/strong&gt; your vimrc into separate files.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;How can this be accomplished?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let’s use plugin management as an example:&lt;/p&gt;
+
+&lt;p&gt;I use &lt;a href=&quot;https://github.com/gmarik/Vundle.vim&quot;&gt;Vundle.vim&lt;/a&gt;, and according to the &lt;a href=&quot;https://github.com/gmarik/Vundle.vim#quick-start&quot;&gt;docs&lt;/a&gt;, your vimrc must be set up in a specific order (Vundle config must be at the top):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;quot; ~/.vim/vimrc&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nocompatible&lt;/span&gt;              &lt;span class=&quot;c&quot;&gt;&amp;quot; be iMproved, required&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;filetype&lt;/span&gt; off                  &lt;span class=&quot;c&quot;&gt;&amp;quot; required&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;quot; set the runtime path to include Vundle and initialize&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;rtp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;+=~&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/.vim/&lt;/span&gt;bundle/Vundle.&lt;span class=&quot;k&quot;&gt;vim&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt; vundle#begin&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; alternatively, pass a path where Vundle should install plugins&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot;call vundle#begin(&amp;#39;~/some/path/here&amp;#39;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;quot; let Vundle manage Vundle, required&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;&amp;#39;gmarik/Vundle.vim&amp;#39;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;quot; The following are examples of different formats supported.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; Keep Plugin commands between vundle#begin/end.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; plugin on GitHub repo&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;&amp;#39;tpope/vim-fugitive&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; plugin from http://vim-scripts.org/vim/scripts.html&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;&amp;#39;L9&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; Git plugin not hosted on GitHub&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;&amp;#39;git://git.wincent.com/command-t.git&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; git repos on your local machine (i.e. when working on your own plugin)&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;&amp;#39;file:///home/gmarik/path/to/plugin&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; The sparkup vim script is in a subdirectory of this repo called vim.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; Pass the path to set the runtimepath properly.&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;&amp;#39;rstacruz/sparkup&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; {&lt;span class=&quot;s1&quot;&gt;&amp;#39;rtp&amp;#39;&lt;/span&gt;: &lt;span class=&quot;s1&quot;&gt;&amp;#39;vim/&amp;#39;&lt;/span&gt;}
+&lt;span class=&quot;c&quot;&gt;&amp;quot; Avoid a name conflict with L9&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;&amp;#39;user/L9&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; {&lt;span class=&quot;s1&quot;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;: &lt;span class=&quot;s1&quot;&gt;&amp;#39;newL9&amp;#39;&lt;/span&gt;}
+
+&lt;span class=&quot;c&quot;&gt;&amp;quot; All of your Plugins must be added before the following line&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt; vundle#&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;            &lt;span class=&quot;c&quot;&gt;&amp;quot; required&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;filetype&lt;/span&gt; plugin indent &lt;span class=&quot;k&quot;&gt;on&lt;/span&gt;    &lt;span class=&quot;c&quot;&gt;&amp;quot; required&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; To ignore plugin indent changes, instead use:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot;filetype plugin on&amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot;&amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; mapleader &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;,&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;number&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;syntax&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;on&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;colorscheme&lt;/span&gt; Tubster
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;autoindent&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot;... more vim configuration&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This might be fine if you only use a couple of plugins, but if you use a lot of plugins (like me), then your vimrc will obviously get bigger.&lt;/p&gt;
+
+&lt;h2 id=&quot;splitting-the-vimrc-into-multiple-files&quot;&gt;Splitting the vimrc into multiple files&lt;/h2&gt;
+
+&lt;p&gt;In order to be able to split the vimrc, we have to find a way to read/source the splitted files, the &lt;a href=&quot;http://vimdoc.sourceforge.net/htmldoc/repeat.html#:runtime&quot;&gt;runtime&lt;/a&gt; command is what we’re looking for.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;How can I use it?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;we create a folder called &lt;em&gt;config&lt;/em&gt; inside the vim configuration folder (in my case, the folder lives in &lt;code&gt;~/.vim/&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;inside the config folder, create a file and move all the Vundle configuration there, I named it &lt;code&gt;VundleFile.vim&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;replace all the Vundle.vim config in the vimrc with &lt;code&gt;runtime config/VundleFile.vim&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The contents of &lt;code&gt;config/VundleFile.vim&lt;/code&gt; should be:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;quot; set the runtime path to include Vundle and initialize&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;rtp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;+=~&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/.vim/&lt;/span&gt;bundle/Vundle.&lt;span class=&quot;k&quot;&gt;vim&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt; vundle#begin&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; alternatively, pass a path where Vundle should install plugins&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot;call vundle#begin(&amp;#39;~/some/path/here&amp;#39;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;quot; let Vundle manage Vundle, required&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;&amp;#39;gmarik/Vundle.vim&amp;#39;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;quot; The following are examples of different formats supported.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; Keep Plugin commands between vundle#begin/end.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; plugin on GitHub repo&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;&amp;#39;tpope/vim-fugitive&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; plugin from http://vim-scripts.org/vim/scripts.html&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;&amp;#39;L9&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; Git plugin not hosted on GitHub&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;&amp;#39;git://git.wincent.com/command-t.git&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; git repos on your local machine (i.e. when working on your own plugin)&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;&amp;#39;file:///home/gmarik/path/to/plugin&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; The sparkup vim script is in a subdirectory of this repo called vim.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; Pass the path to set the runtimepath properly.&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;&amp;#39;rstacruz/sparkup&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; {&lt;span class=&quot;s1&quot;&gt;&amp;#39;rtp&amp;#39;&lt;/span&gt;: &lt;span class=&quot;s1&quot;&gt;&amp;#39;vim/&amp;#39;&lt;/span&gt;}
+&lt;span class=&quot;c&quot;&gt;&amp;quot; Avoid a name conflict with L9&lt;/span&gt;
+Plugin &lt;span class=&quot;s1&quot;&gt;&amp;#39;user/L9&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; {&lt;span class=&quot;s1&quot;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;: &lt;span class=&quot;s1&quot;&gt;&amp;#39;newL9&amp;#39;&lt;/span&gt;}
+
+&lt;span class=&quot;c&quot;&gt;&amp;quot; All of your Plugins must be added before the following line&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt; vundle#&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;            &lt;span class=&quot;c&quot;&gt;&amp;quot; required&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And your &lt;code&gt;vimrc&lt;/code&gt; should look like:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;quot; ~/.vim/vimrc&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nocompatible&lt;/span&gt;              &lt;span class=&quot;c&quot;&gt;&amp;quot; be iMproved, required&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;filetype&lt;/span&gt; off                  &lt;span class=&quot;c&quot;&gt;&amp;quot; required&lt;/span&gt;
+
+runtime config/VundleFile.&lt;span class=&quot;k&quot;&gt;vim&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;filetype&lt;/span&gt; plugin indent &lt;span class=&quot;k&quot;&gt;on&lt;/span&gt;    &lt;span class=&quot;c&quot;&gt;&amp;quot; required&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; To ignore plugin indent changes, instead use:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot;filetype plugin on&amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot;&amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; mapleader &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;,&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;number&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;syntax&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;on&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;colorscheme&lt;/span&gt; Tubster
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;autoindent&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot;... more vim configuration&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;So now &lt;code&gt;config/VundleFile.vim&lt;/code&gt; contains Vundle-specific config only.&lt;/p&gt;
+
+&lt;p&gt;Your vimrc is a lot cleaner thanks to this technique:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;quot; ~/.vim/vimrc&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nocompatible&lt;/span&gt;              &lt;span class=&quot;c&quot;&gt;&amp;quot; be iMproved, required&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;filetype&lt;/span&gt; off                  &lt;span class=&quot;c&quot;&gt;&amp;quot; required&lt;/span&gt;
+
+runtime config/VundleFile.&lt;span class=&quot;k&quot;&gt;vim&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;filetype&lt;/span&gt; plugin indent &lt;span class=&quot;k&quot;&gt;on&lt;/span&gt;    &lt;span class=&quot;c&quot;&gt;&amp;quot; required&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot; To ignore plugin indent changes, instead use:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;quot;filetype plugin on&amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot;&amp;quot; &amp;quot; &amp;quot; &amp;quot; &amp;quot;&lt;/span&gt;
+
+runtime config/custom&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;settings.&lt;span class=&quot;k&quot;&gt;vim&lt;/span&gt;
+
+runtime config/custom&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;mappings.&lt;span class=&quot;k&quot;&gt;vim&lt;/span&gt;
+
+runtime config/custom&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;functions.&lt;span class=&quot;k&quot;&gt;vim&lt;/span&gt;
+
+runtime config/misc&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;plugin&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;settings.&lt;span class=&quot;k&quot;&gt;vim&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you know of a better way to do this, feel free to share it in the comments.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://rkrdo.github.io/2015/03/01/a-cleaner-vimrc/&quot;&gt;A cleaner vimrc&lt;/a&gt; was originally published by Ricardo Cruz at &lt;a href=&quot;http://rkrdo.github.io&quot;&gt;Ricardo's Blog&lt;/a&gt; on March 01, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[Getting Started with Ember.js]]></title>
- <link rel="alternate" type="text/html" href="/2013/12/29/getting-started-with-ember-js/" />
-  <id>/2013/12/29/getting-started-with-ember-js</id>
+ <link rel="alternate" type="text/html" href="http://rkrdo.github.io/2013/12/29/getting-started-with-ember-js/" />
+  <id>http://rkrdo.github.io/2013/12/29/getting-started-with-ember-js</id>
   <published>2013-12-29T15:05:00-05:00</published>
   <updated>2013-12-29T15:05:00-05:00</updated>
   <author>
     <name>Ricardo Cruz</name>
-    <uri></uri>
+    <uri>http://rkrdo.github.io</uri>
     <email>ricardocruz.a89@gmail.com</email>
   </author>
   <content type="html">
@@ -44,20 +206,20 @@ Since one of the developers behind it was part of the Rails Core Team, I knew I 
 
 &lt;p&gt;Also, check out Reddit’s &lt;a href=&quot;http://www.reddit.com/r/emberjs&quot;&gt;Ember.js Subreddit&lt;/a&gt;, it has some great resources.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/2013/12/29/getting-started-with-ember-js/&quot;&gt;Getting Started with Ember.js&lt;/a&gt; was originally published by Ricardo Cruz at &lt;a href=&quot;&quot;&gt;Ricardo's Blog&lt;/a&gt; on December 29, 2013.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://rkrdo.github.io/2013/12/29/getting-started-with-ember-js/&quot;&gt;Getting Started with Ember.js&lt;/a&gt; was originally published by Ricardo Cruz at &lt;a href=&quot;http://rkrdo.github.io&quot;&gt;Ricardo's Blog&lt;/a&gt; on December 29, 2013.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Github Raw]]></title>
- <link rel="alternate" type="text/html" href="/2013/10/04/github-raw/" />
-  <id>/2013/10/04/github-raw</id>
+ <link rel="alternate" type="text/html" href="http://rkrdo.github.io/2013/10/04/github-raw/" />
+  <id>http://rkrdo.github.io/2013/10/04/github-raw</id>
   <published>2013-10-04T16:05:00-04:00</published>
   <updated>2013-10-04T16:05:00-04:00</updated>
   <author>
     <name>Ricardo Cruz</name>
-    <uri></uri>
+    <uri>http://rkrdo.github.io</uri>
     <email>ricardocruz.a89@gmail.com</email>
   </author>
   <content type="html">
@@ -76,7 +238,7 @@ have every library  or maybe it has the library, but you need a newer version.&l
 &lt;br /&gt;
 Credits go to &lt;a href=&quot;https://twitter.com/yaypie&quot;&gt;@yaypie&lt;/a&gt; for putting up that information.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/2013/10/04/github-raw/&quot;&gt;Github Raw&lt;/a&gt; was originally published by Ricardo Cruz at &lt;a href=&quot;&quot;&gt;Ricardo's Blog&lt;/a&gt; on October 04, 2013.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://rkrdo.github.io/2013/10/04/github-raw/&quot;&gt;Github Raw&lt;/a&gt; was originally published by Ricardo Cruz at &lt;a href=&quot;http://rkrdo.github.io&quot;&gt;Ricardo's Blog&lt;/a&gt; on October 04, 2013.&lt;/p&gt;
   </content>
 </entry>
 
